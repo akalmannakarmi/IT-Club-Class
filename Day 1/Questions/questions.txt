@@ -1,0 +1,17 @@
+# Easy
+1) Create a program to print :
+  /\
+ /  \
+/____\
+
+2) Create a program to print the values of a = 10,b=25.42,c="cat",d=TRUE.
+
+# Medium
+3) Create a program to print the sum,difference,muliplication,division of a = 10 , b = 2.
+
+4) Create a program to print first 10 terms 2,4,8,....
+
+# Hard
+5) Create a program to print the smallest and the largest number in the array/list [2,7,8,23,75,23,64].
+
+6) Create a program to input any two number and an operator(+,-,*,/) and perfrom the specified operation and print the result. 
