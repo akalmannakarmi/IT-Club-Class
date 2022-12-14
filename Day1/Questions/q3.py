@@ -1,1 +1,1 @@
-# 3) Create a program to print the sum,difference,muliplication,division of a = 10 , b = 2.
+# 3) Create a program to print the sum,difference,multiplication,division of a = 10 , b = 2.

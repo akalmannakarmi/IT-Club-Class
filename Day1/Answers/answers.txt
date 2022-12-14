@@ -1,3 +1,4 @@
-Answers will be provided after a week
-
-Bruh you though you could just copy paste
+Answers that are provided are not the absolute answers.
+In programming there maybe many ways to perform the same task
+Try not to copy paste the answers
+Use the answers to get an idea of how to solve or to compare with your answers

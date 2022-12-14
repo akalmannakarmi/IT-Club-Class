@@ -19,7 +19,7 @@ num2 = 4
 print(f"{num1} + {num2} = {add(num1,num2)}")
 
 sub = substract(num1,num2)
-print(f"{num1} + {num2} = {sub}")
+print(f"{num1} - {num2} = {sub}")
 
 mult = multiply(num1,num2)
-print(f"{num1} + {num2} = {mult}")
+print(f"{num1} * {num2} = {mult}")
