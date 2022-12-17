@@ -1,0 +1,1 @@
+# 1) Create a file to store your Name,Age,Course.

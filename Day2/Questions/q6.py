@@ -1,0 +1,1 @@
+# 6) WAP to store Name,Email and PhoneNo of your friends. Also WAP to add more.

@@ -1,0 +1,1 @@
+# 2) Create a file to store the Names of your friends

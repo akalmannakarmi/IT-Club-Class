@@ -1,0 +1,1 @@
+# 5) WAP to check if the input word is a valid word (use the file with words provided)

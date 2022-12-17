@@ -2,6 +2,7 @@
 import json
 
 separator = ":"
+
 # Read txt file
 with open("Day2\Examples\code5.txt",'r') as file:
     txts = file.readlines()
