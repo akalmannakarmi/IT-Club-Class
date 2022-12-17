@@ -1,3 +1,5 @@
+# Program to convert 8085 instruction to hex code
+
 # Imports
 import json
 
@@ -11,7 +13,7 @@ codes = []
 result = {}
 currentAddr = 0xC000    #Starting address
 
-def loadInstructions():
+def loadInstructions():     #Loads all the instructions to Dictionary
     global ins1Byte,ins2Byte,ins3Byte,insJump
     with open("Day2/Examples/project1/1byte.json") as file:
         ins1Byte = json.load(file)
@@ -22,42 +24,24 @@ def loadInstructions():
     with open("Day2/Examples/project1/jump.json") as file:
         insJump = json.load(file)
         
-def printInstructions():
-    print(f"1 Byte instructions")
-    print(f"Opcodes\tHex Code")
-    for opcode,hexCode in ins1Byte.items():
-        print(f"{opcode}\t{hexCode}")
-    print(f"2 Byte instructions")
-    print(f"Opcodes\tHex Code")
-    for opcode,hexCode in ins2Byte.items():
-        print(f"{opcode}\t{hexCode}")
-    print(f"3 Byte instructions")
-    print(f"Opcodes\tHex Code")
-    for opcode,hexCode in ins3Byte.items():
-        print(f"{opcode}\t{hexCode}")
-    print(f"Jump instructions")
-    print(f"Opcodes\tHex Code")
-    for opcode,hexCode in insJump.items():
-        print(f"{opcode}\t{hexCode}")
-        
-def readCode():
+def readCode(): #Reads the code file and stores in codes
     global codes
     with open("Day2/Examples/project1/code.txt") as file:
         codes = file.readlines()
         
-def writeResult():
+def writeResult():  #Writes the result to result.txt
     global result
     with open("Day2/Examples/project1/result.txt","w") as file:
         for address,data in result.items():
             file.writelines(f"{hex(address)[2:].upper()} {data}\n")
         
-def addDatas(datas):
+def addDatas(datas):    #Adds the data to the address
     global result,currentAddr
     for data in datas:
         result[currentAddr] = data
         currentAddr +=0x1
         
-def convert(code):
+def convert(code):  #Convers the given instruction to hex code
     global codes,ins1Byte,ins2Byte,ins3Byte,insJump,labels,result
     datas = []
     for instruction in ins1Byte:
@@ -85,7 +69,7 @@ def convert(code):
             datas.append("")
             return datas
 
-def convertCode():
+def convertCode():  #Converts the code to hex values
     global codes,labels,result,currentAddr
     for code in codes:
         if code.find(":") !=-1:
@@ -95,7 +79,7 @@ def convertCode():
         addDatas(datas)
     placeLabels()
     
-def placeLabels():
+def placeLabels():  #Replace the placeholder address names with actuall address
     global result,labels
     for address,data in result.items():
         for label in labels:
@@ -103,7 +87,27 @@ def placeLabels():
                 result[address] = hex(labels[label])[4:6].upper()
                 result[address+0x1] = hex(labels[label])[2:4].upper()
 
-def printCodeNResult():
+# Extra code
+def printInstructions():    #Prints all the loaded Instructions 
+    print(f"1 Byte instructions")
+    print(f"Opcodes\tHex Code")
+    for opcode,hexCode in ins1Byte.items():
+        print(f"{opcode}\t{hexCode}")
+    print(f"2 Byte instructions")
+    print(f"Opcodes\tHex Code")
+    for opcode,hexCode in ins2Byte.items():
+        print(f"{opcode}\t{hexCode}")
+    print(f"3 Byte instructions")
+    print(f"Opcodes\tHex Code")
+    for opcode,hexCode in ins3Byte.items():
+        print(f"{opcode}\t{hexCode}")
+    print(f"Jump instructions")
+    print(f"Opcodes\tHex Code")
+    for opcode,hexCode in insJump.items():
+        print(f"{opcode}\t{hexCode}")
+
+#Extra code
+def printCodeNResult(): #Prints The result 
     global codes,result
     print("-------------\nCode")
     for code in codes:
@@ -123,7 +127,7 @@ def run():
     writeResult()
     printCodeNResult()
     
-    
+
     
 if __name__ == "__main__":
     run()

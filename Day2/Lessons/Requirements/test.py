@@ -2,9 +2,10 @@
 with open("Day2/Lessons/Requirements/data.txt","r") as test:
     rawData = test.read()
     
-data = rawData.splitlines()
 words = []
 lineNo=0
+# Spliting the data into lines then words
+data = rawData.splitlines()
 for line in data:
     lineNo+=1
     line = line.split(" ")
