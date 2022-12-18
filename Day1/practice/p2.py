@@ -1,0 +1,1 @@
+# WAP to calculate average of 5 numbers
