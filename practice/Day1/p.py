@@ -1,0 +1,1 @@
+# No practice questions for day 1. Only Coding concept (Examples)
